@@ -1,33 +1,32 @@
 #include <stdio.h>
 
 main() {
-  int G1, M1, A1;
-  int G2, M2, A2;
-  int N01, N11, N21, N31;
-  int N02, N12, N22, N32;
+  int G, M, A;
+  int N0, N1, N2, N3;
   int JD1, JD2;
 
   printf("Inserisci la prima data\n");
-  scanf("%d%d%d", &G1, &M1, &A1);
-  printf("Inserisci la seconda data\n");
-  scanf("%d%d%d", &G2, &M2, &A2);
-
+  scanf("%d%d%d", &G, &M, &A);
+  
   // calcolo del giorno giuliano della prima data
-  N01 = (M1 - 14) / 12;
-  N11 = 1461 * (A1 + 4800 + N01) / 4;
-  N21 = 367 * (M1 - 2 - 12 * N01) / 12;
-  N31 = 3 * (A1 + 4900 + N01) / 400;
+  N0 = (M - 14) / 12;
+  N1 = 1461 * (A + 4800 + N0) / 4;
+  N2 = 367 * (M - 2 - 12 * N0) / 12;
+  N3 = 3 * (A + 4900 + N0) / 400;
 
-  JD1 = N11 + N21 - N31 + G1 - 32075;
+  JD1 = N1 + N2 - N3 + G - 32075;
 
-  // calcolo del giorno giuliano della seconda data  
-  N02 = (M2 - 14) / 12;
-  N12 = 1461 * (A2 + 4800 + N02) / 4;
-  N22 = 367 * (M2 - 2 - 12 * N02) / 12;
-  N32 = 3 * (A2 + 4900 + N02) / 400;
+  printf("Inserisci la seconda data\n");
+  scanf("%d%d%d", &G, &M, &A);
 
-  JD2 = N12 + N22 - N32 + G2 - 32075;
+  // calcolo del giorno giuliano della seconda data
+  N0 = (M - 14) / 12;
+  N1 = 1461 * (A + 4800 + N0) / 4;
+  N2 = 367 * (M - 2 - 12 * N0) / 12;
+  N3 = 3 * (A + 4900 + N0) / 400;
 
-  // stampa della differenza  
+  JD2 = N1 + N2 - N3 + G - 32075;
+
+  // stampa della differenza
   printf("Differenza fra date: %d\n", JD2 - JD1);
 }
