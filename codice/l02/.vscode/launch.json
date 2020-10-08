@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/giorno-giuliano",
+            "program": "${workspaceFolder}/differenza-fra-date",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
