@@ -15,7 +15,7 @@ main() {
       // i assume la sequenza dei divisori di numero
       int j, cont;  // cont è il contatore dei divisori di i
       cont = 0;
-      for (j = 2; j <= i - 1 && cont == 0; j++) {
+      for (j = 2; j * j <= i && cont == 0; j++) {
         // j assume la sequenza di valori fra 2 e i-1
         if (i % j == 0) {
           cont++;
