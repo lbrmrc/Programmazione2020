@@ -10,7 +10,7 @@ int main() {
   trovato = 0;
   j = 0;
   while (!trovato && s2[j] != '\0') {
-    while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[j + i])
+    while (s1[i] != '\0' && s2[j + i] != '\0' && s1[i] == s2[j + i])
       i++;
     if (s1[i] == '\0')
       trovato = 1;
