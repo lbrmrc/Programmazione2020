@@ -15,7 +15,7 @@ float potenza(int base, int esp) {
 int main() {
   printf("%f\n", potenza(2, 3));   // atteso: 8
   printf("%f\n", potenza(2, 0));   // atteso: 1
-  printf("%f\n", potenza(2, -3));  // atteso: 0.125
+  printf("%.3f\n", potenza(2, -3));  // atteso: 0.125
 
   return 0;
 }
