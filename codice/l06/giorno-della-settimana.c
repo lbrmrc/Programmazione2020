@@ -12,32 +12,22 @@ int giorno_giuliano(int g, int m, int a) {
 char giorno(int G, int M, int A) {
   // calcola il resto della divisione per 7
   // del giorno giuliano della data <G,M,A>
-  char giorno_settimana;
   switch (giorno_giuliano(G, M, A) % 7) {
     case 0:
-      giorno_settimana = 'l';
-      break;
+      return 'l';
     case 1:
-      giorno_settimana = 'm';
-      break;
+      return 'm';
     case 2:
-      giorno_settimana = 'M';
-      break;
+      return 'M';
     case 3:
-      giorno_settimana = 'g';
-      break;
+      return 'g';
     case 4:
-      giorno_settimana = 'v';
-      break;
+      return 'v';
     case 5:
-      giorno_settimana = 's';
-      break;
+      return 's';
     case 6:
-      giorno_settimana = 'd';
-      break;
+      return 'd';
   }
-
-  return giorno_settimana;
 }
 
 int main() {
