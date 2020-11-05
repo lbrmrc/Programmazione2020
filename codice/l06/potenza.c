@@ -9,10 +9,7 @@ float potenza(int base, int esp) {
   }
   for (cont = 0; cont < esp; cont++)
     prod *= base;
-  if (neg == 1)
-    return 1.0 / prod;
-  else
-    return prod;
+  return neg ? 1.0 / prod : prod;
 }
 
 int main() {
