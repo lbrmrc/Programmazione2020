@@ -2,7 +2,7 @@
 
 int f(int d);
 
-int main(int argc, char* argv[]) {
+int main() {
   int a = 0, i[] = {1, 1, 1};
   while (a < 2)
     i[a] = f(++a);
