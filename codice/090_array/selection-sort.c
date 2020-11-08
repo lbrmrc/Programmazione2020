@@ -1,20 +1,20 @@
 #include <stdio.h>
 #define DIM 5
 int main() {
-  int a[] = {4, 1, 8, 0, 5}, i;
+  int a[] = {4, 1, 8, 0, 5}, dlo;
 
-  for (i = 0; i < DIM - 1; i++) {
-    int min = i, j;
-    for (j = i + 1; j < DIM; j++)
+  for (dlo = 0; dlo < DIM - 1; dlo++) {
+    int min = dlo, j;
+    for (j = dlo + 1; j < DIM; j++)
       if (a[j] < a[min])
         min = j;
-    if (i != min) {
+    if (dlo != min) {
       int temp = a[min];
-      a[min] = a[i];
-      a[i] = temp;
+      a[min] = a[dlo];
+      a[dlo] = temp;
     }
   }
-  for (i = 0; i < DIM; i++)
-    printf("%d ", a[i]);
+  for (dlo = 0; dlo < DIM; dlo++)
+    printf("%d ", a[dlo]);
   printf("\n");
 }

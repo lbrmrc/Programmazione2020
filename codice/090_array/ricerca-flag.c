@@ -3,6 +3,7 @@ int main() {
   int a[DIM];
   int trovato = 0, i;
 
+  i = 0;
   while (!trovato && i < DIM)
     if (/* proprieta` desiderata di a[i] */)
       trovato = 1;
