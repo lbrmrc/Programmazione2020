@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/a.out",
-            "args": ["<", "numeri_reali.txt"],
+            "args": ["<", "voti.in"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
