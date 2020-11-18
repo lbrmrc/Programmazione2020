@@ -1,0 +1,1 @@
+L'elemento di valore assoluto massimo è 6.200000, all'indice 4
