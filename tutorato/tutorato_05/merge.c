@@ -67,7 +67,15 @@ int main() {
     // b: 3 4           ib nb = 2
     // c: 1 3 3 4 6 7 8 ic nc
     while(ia < na && ib < nb) {
-
+        if(a[ia] < b[ib]) {
+            c[ic] = a[ia];
+            ia++;
+        }
+        else {
+            c[ic] = b[ib];
+            ib++;
+        }
+        ic++;
     }
 
     // a è completato, ricopiare b
@@ -84,4 +92,10 @@ int main() {
             ic++;
         }
     }
+
+    printf("Array c: [");
+    for(i = 0; i < ic; i++) {
+        printf("%d ",c[i]);
+    }
+    printf("]\n");
 }
