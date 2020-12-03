@@ -5,11 +5,22 @@ typedef struct {
   int den;
 } Frazione;
 
+int MCD(int a, int b) {
+  while (a != b) {
+    if (a > b)
+      a = a - b;
+    else
+      b = b - a;
+  }
+  return a;
+}
+
 // "costruttore"
 Frazione frazione(int n, int d) {
+  int mcd = MCD(n, d);
   Frazione f;
-  f.num = n;
-  f.den = d;
+  f.num = n / mcd;
+  f.den = d / mcd; 
   return f;
 }
 
@@ -28,15 +39,7 @@ Frazione leggiFrazione() {
   return frazione(n, d);
 }
 
-int MCD(int a, int b) {
-  while (a != b) {
-    if (a > b)
-      a = a - b;
-    else
-      b = b - a;
-  }
-  return a;
-}
+
 
 Frazione semplifica(Frazione f) {
   int mcd = MCD(numeratore(f), denominatore(f));
@@ -44,9 +47,7 @@ Frazione semplifica(Frazione f) {
 }
 
 void stampaFrazione(Frazione f) {
-  Frazione fs;
-  fs = semplifica(f);
-  printf("%d/%d", numeratore(fs), denominatore(fs));
+  printf("%d/%d", numeratore(f), denominatore(f));
 }
 
 float aFloat(Frazione f) {
