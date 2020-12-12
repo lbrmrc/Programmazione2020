@@ -98,6 +98,7 @@ int main() {
     printf("Errore chiusura file\n");
     exit(2);
   }
+
   parolaCasuale(p);
   ps = nuovaParolaSegreta(p);
 
@@ -118,5 +119,6 @@ int main() {
     printf("Hai perso!\n");
 
   printf("La parola era %s\n", p);
+
   return 0;
 }
