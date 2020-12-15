@@ -1,0 +1,1 @@
+void stampa(Lista l);
