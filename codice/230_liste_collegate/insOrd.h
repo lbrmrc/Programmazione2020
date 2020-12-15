@@ -1,0 +1,1 @@
+void insOrd(Lista* pl, int d);
