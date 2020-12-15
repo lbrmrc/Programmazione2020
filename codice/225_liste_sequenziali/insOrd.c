@@ -1,4 +1,4 @@
-void inserimento_ordinato(Lista* pl, int numero) {
+void insOrd(Lista* pl, int numero) {
   int i;
   if (piena(*pl)) {
     // se la lista e' piena non posso inserire elementi

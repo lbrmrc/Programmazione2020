@@ -1,4 +1,4 @@
-void inserimento_testa(Lista* pl, int numero) {
+void insTesta(Lista* pl, int numero) {
   int i;
   if (piena(*pl)) {
     // se la lista e' piena non posso inserire elementi

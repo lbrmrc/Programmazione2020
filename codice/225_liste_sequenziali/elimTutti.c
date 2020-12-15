@@ -1,4 +1,4 @@
-void elimina(Lista* pl, int numero) {
+void elimTutti(Lista* pl, int numero) {
   int i = 0;
   while (i < pl->n_elementi)  // scorro tutti gli elementi
   {
