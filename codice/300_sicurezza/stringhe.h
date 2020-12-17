@@ -1,0 +1,1 @@
+void leggiStringa(char* s, int lunghezza);
