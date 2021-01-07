@@ -4,7 +4,7 @@
 #include "lista.h"
 
 int main(int argc, char* argv[]) {
-  Lista l;
+  Lista l, l_ordinata;
   FILE *f_in, *f_out;
   char parola[LUNGHEZZA_MAX];
 
@@ -24,15 +24,17 @@ int main(int argc, char* argv[]) {
   // reduce (aggiornaLista, [], f_in)
   while (fscanf(f_in, "%s", parola) == 1)
     aggiornaLista(&l, parola);
-
   fclose(f_in);
+
+  nuovaLista(&l_ordinata);
+  ordina(l, &l_ordinata);
 
   f_out = fopen(argv[2], "wt");
   if (f_out == NULL) {
     printf("Impossibile aprire %s\n", argv[2]);
     exit(2);
   }
-  outputLista(l,f_out);
+  outputLista(l_ordinata, f_out);
   fclose(f_out);
 
   return 0;

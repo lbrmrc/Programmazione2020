@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/conteggio-parole",
-            "args": ["amleto.txt", "out.txt"],
+            "args": ["divina_commedia.txt", "out.txt"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

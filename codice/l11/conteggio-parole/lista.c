@@ -1,6 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "lista.h"
 
@@ -39,10 +39,37 @@ void aggiornaLista(Lista* pl, char parola[LUNGHEZZA_MAX]) {
   }
 }
 
-void outputLista(Lista l, FILE *f){
-    // analoga alla stampa di una lista
-    while (l != NULL){
-        fprintf(f, "%s %d\n", l->dato.parola, l->dato.n_occorrenze);
-        l = l->next;
-    }   
+void outputLista(Lista l, FILE* f) {
+  // analoga alla stampa di una lista
+  while (l != NULL) {
+    fprintf(f, "%s %d\n", l->dato.parola, l->dato.n_occorrenze);
+    l = l->next;
+  }
+}
+
+int precede(Dato d1, Dato d2) {
+  if (d1.n_occorrenze > d2.n_occorrenze)
+    return 1;
+  if (d1.n_occorrenze == d2.n_occorrenze && strcmp(d1.parola, d2.parola) < 0)
+    return 1;
+  return 0;
+}
+
+Lista* ricerca(Lista* pl, Dato d) {
+  while (*pl != NULL && precede((*pl)->dato, d)) {
+    pl = &(*pl)->next;
+  }
+  return pl;
+}
+
+void insOrd(Lista* pl, Dato d) {
+  pl = ricerca(pl, d);
+  insTesta(pl, d);
+}
+
+void ordina(Lista l, Lista* pl_ord) {
+  while (l) {
+    insOrd(pl_ord, l->dato);
+    l = l->next;
+  }
 }
