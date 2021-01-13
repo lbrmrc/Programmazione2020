@@ -1,8 +1,8 @@
 typedef struct {
     char cf[17];
-    int att1;
-    int att2;
-    int att3;
+    int attivita[3];
+    int abilitato;
+    int tentativiNegati;
 } Dato;
 
 typedef struct nodo {

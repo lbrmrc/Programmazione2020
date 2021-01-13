@@ -32,9 +32,11 @@ int main(int argc, char* argv[]) {
   while (fread(&c, sizeof(CodiceFiscale), 1, fb) == 1) {
     Dato d;
     strcpy(d.cf, c.cf);
-    d.att1 = 4;
-    d.att2 = 4;
-    d.att3 = 4;
+    d.attivita[0] = 4;
+    d.attivita[1] = 4;
+    d.attivita[2] = 4;
+    d.abilitato = 1;
+    d.tentativiNegati = 0;
     insTesta(&l, d);
   }
   fclose(fb);

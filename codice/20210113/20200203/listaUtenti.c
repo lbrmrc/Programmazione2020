@@ -1,6 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "listaUtenti.h"
 
@@ -17,50 +17,32 @@ void insTesta(Lista* pl, Dato d) {
 
 void decrementoContatoreOErrore(Lista* pl, char cf[], int attivita) {
   while (*pl != NULL) {
-    /* con 
-        typedef struct {
-        char cf[17];
-        int contatori_attivita[3];
-    } Dato;
-
-  ....
-
-      if ((*pl)->dato.contatori_attivita[attivita-1] > 0)
-          (*pl)->dato.contatori_attivita[attivita-1]--;
-      else
-      ...
-      */
     if (strcmp((*pl)->dato.cf, cf) == 0)
-      switch (attivita) {
-        case 1:
-          if ((*pl)->dato.att1 > 0)
-            (*pl)->dato.att1--;
-          else
-            printf("Codice fiscale: %s, attivita` %d: accesso negato\n",
-                   (*pl)->dato.cf, attivita);
-          break;
-        case 2:
-          if ((*pl)->dato.att2 > 0)
-            (*pl)->dato.att2--;
-          else
-            printf("Codice fiscale: %s, attivita` %d: accesso negato\n",
-                   (*pl)->dato.cf, attivita);
-          break;
-        case 3:
-          if ((*pl)->dato.att3 > 0)
-            (*pl)->dato.att3--;
-          else
-            printf("Codice fiscale: %s, attivita` %d: accesso negato\n",
-                   (*pl)->dato.cf, attivita);
-          break;
+      if ((*pl)->dato.abilitato) {
+        if ((*pl)->dato.attivita[attivita - 1] > 0) {
+          (*pl)->dato.attivita[attivita - 1]--;
+          (*pl)->dato.tentativiNegati = 0;
+        } else {
+          printf("Codice fiscale: %s, attivita` %d: accesso negato\n",
+                 (*pl)->dato.cf, attivita);
+          (*pl)->dato.tentativiNegati++;
+          if ((*pl)->dato.tentativiNegati >= 3)
+            (*pl)->dato.abilitato = 0;
+        }
+      } else {
+        printf("Utente %s disabilitato\n", (*pl)->dato.cf);
       }
     pl = &(*pl)->next;
   }
 }
 
-void stampa(Lista l){
-    while (l){
-        printf("%s %d %d %d\n", l->dato.cf, l->dato.att1, l->dato.att2, l->dato.att3);
-        l = l->next;
-    }
+void stampa(Lista l) {
+  int i;
+  while (l) {
+    printf("%s ", l->dato.cf);
+    for (i = 0; i < 3; i++)
+      printf("%d ", l->dato.attivita[i]);
+    printf("\n");
+    l = l->next;
+  }
 }
