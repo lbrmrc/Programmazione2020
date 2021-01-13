@@ -44,11 +44,21 @@ void stampa(Lista l) {
 }
 
 int natiEntro(Lista l, int a) {
-  // length(filter (l->dato.anno_nascita <= a, l))
-  int contatore = 0;
-  while (l != NULL && l->dato.anno_nascita <= a) {
-    contatore++;
-    l = l->next;
+  if (l == NULL || l->dato.anno_nascita > a) {
+    // caso base
+    return 0;
+  } else {
+    // caso ricorsivo
+    return 1 + natiEntro(l->next, a);
   }
-  return contatore;
 }
+
+// int natiEntro(Lista l, int a) {
+//   // length(filter (l->dato.anno_nascita <= a, l))
+//   int contatore = 0;
+//   while (l != NULL && l->dato.anno_nascita <= a) {
+//     contatore++;
+//     l = l->next;
+//   }
+//   return contatore;
+// }
