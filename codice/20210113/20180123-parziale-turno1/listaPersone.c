@@ -42,3 +42,13 @@ void stampa(Lista l) {
     l = l->next;
   }
 }
+
+int natiEntro(Lista l, int a) {
+  // length(filter (l->dato.anno_nascita <= a, l))
+  int contatore = 0;
+  while (l != NULL && l->dato.anno_nascita <= a) {
+    contatore++;
+    l = l->next;
+  }
+  return contatore;
+}

@@ -6,6 +6,7 @@
 int main(int argc, char* argv[]) {
   FILE* f;
   Persona p;
+  int annoMax;
   Lista l;
   if (argc != 2) {
     printf("Uso: %s filePersone\n", argv[0]);
@@ -25,5 +26,9 @@ int main(int argc, char* argv[]) {
   fclose(f);
 
   stampa(l);
+
+  printf("Anno max?\n");
+  scanf("%d", &annoMax);
+  printf("I nati entro il %d sono %d\n", annoMax, natiEntro(l, annoMax));
   return 0;
 }
