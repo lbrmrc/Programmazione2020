@@ -1,0 +1,1 @@
+int elim1(Lista* pl, int d);

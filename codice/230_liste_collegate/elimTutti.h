@@ -1,0 +1,1 @@
+void elimTutti(Lista* pl, int d);

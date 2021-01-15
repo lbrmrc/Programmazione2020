@@ -50,5 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
 codice/L02/giorno-giuliano
 codice/l02/differenza-fra-date
+codice/155_make/prog
+codice/l10/stampaFile
+codice/l10/funzioniCalorie.c
+codice/200_adt/esempioFrazioni
+codice/210_liste_sequenziali/calorie/calcolo-calorie-pasto
+codice/210_liste_sequenziali/lista-ordinata/lista-ordinata
+codice/230_liste_collegate/calorie/calcolo-calorie-pasto
+codice/l11/conteggio-parole/conteggio-parole
+codice/20210113/20180123-parziale-turno1/persone
+codice/20210113/20200203/palestra
