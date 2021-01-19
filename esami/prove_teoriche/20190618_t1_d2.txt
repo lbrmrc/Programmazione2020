@@ -1,3 +1,5 @@
+Risposta alla domanda 2 della prova del 18 giugno 2019
+
 Se la matricola fosse 27025,
 prima del ciclo do l avrebbe gli elementi [2,7,0,2,5].
 Il corpo del ciclo do viene eseguito esattamente una volta,
