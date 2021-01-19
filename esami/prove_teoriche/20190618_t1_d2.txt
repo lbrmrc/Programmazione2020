@@ -1,0 +1,15 @@
+Se la matricola fosse 27025,
+prima del ciclo do l avrebbe gli elementi [2,7,0,2,5].
+Il corpo del ciclo do viene eseguito esattamente una volta,
+perché la condizione di permanenza è subito falsa.
+Il ciclo for nel corpo del ciclo do non ha espressione di inizializzazione.
+Le iterazioni del ciclo sono le seguenti
+- l non è NULL e l->dato vale 2 (condizione di permanenza vera); ad a[2] viene assegnato 2 (corpo); ad l viene assegnata la sua coda e passa ad avere gli elementi [7,0,2,5]
+- l non è NULL e l->dato vale 3; ad a[3] viene assegnato 3; l ha gli elementi [0,2,5]
+- l non è NULL, ma l->dato vale 0: la congiunzione è falsa e il ciclo termina. Le iterazioni sono quindi due.
+Il ciclo for successivo stampa tutti gli elementi dell'array a, che ora sono 0, 0, 2, 0, 0, 0, 0, 7, 0, 0.
+
+In sintesi, si può osservare all'uscita del ciclo do l'array a ha:
+- per tutte le cifre n del numero di matricola fino al primo zero escluso, il valore n all'indice n;
+- 0 nei rimanenti elementi.
+Quest'ultima osservazione non è richiesta ma aiuta a verificare la correttezza del risultato e sarebbe apprezzata in sede di valutazione.
