@@ -11,7 +11,7 @@ Le iterazioni del ciclo sono le seguenti
 - l non è NULL, ma l->dato vale 0: la congiunzione è falsa e il ciclo termina. Le iterazioni sono quindi due.
 Il ciclo for successivo stampa tutti gli elementi dell'array a, che ora sono 0, 0, 2, 0, 0, 0, 0, 7, 0, 0.
 
-In sintesi, si può osservare all'uscita del ciclo do l'array a ha:
+In sintesi, si può osservare che all'uscita del ciclo do l'array a contiene:
 - per tutte le cifre n del numero di matricola fino al primo zero escluso, il valore n all'indice n;
 - 0 nei rimanenti elementi.
 Quest'ultima osservazione non è richiesta ma aiuta a verificare la correttezza del risultato e sarebbe apprezzata in sede di valutazione.
