@@ -37,20 +37,27 @@ void aggiorna(Lista* pl, Record a) {
 }
 
 void stampa(Lista l) {
-  float oreTotali = 0.;
-  int mese, giorno;
+  Record r;
+  float oreTotaliGiornata;
   if (l == NULL)
     return;
+  oreTotaliGiornata = 0.;
+  r.ore = 0;
   do {
-    printf("%d/%d, %s: %.1f ore\n", l->dato.giorno, l->dato.mese,
-           l->dato.attivita, l->dato.ore);
-    oreTotali += l->dato.ore;
-    mese = l->dato.mese;
-    giorno = l->dato.giorno;
+    oreTotaliGiornata += l->dato.ore;
+    r.ore += l->dato.ore;
+    r.giorno = l->dato.giorno;
+    r.mese = l->dato.mese;
+    strcpy(r.attivita, l->dato.attivita);
     l = l->next;
-    if (l == NULL || l->dato.mese != mese || l->dato.giorno != giorno) {
-      printf("Ore totali del giorno %d/%d: %.1f\n", giorno, mese, oreTotali);
-      oreTotali = 0.;
+    if (l == NULL || confronto(r, l->dato) != 0) {
+      printf("%d/%d %s: %.1f\n", r.giorno, r.mese, r.attivita, r.ore);
+      r.ore = 0.;
+    }
+    if (l == NULL || r.giorno != l->dato.giorno || r.mese != l->dato.mese) {
+      printf("Ore totali del giorno %d/%d: %.1f\n", r.giorno, r.mese,
+             oreTotaliGiornata);
+      oreTotaliGiornata = 0.;
     }
   } while (l != NULL);
 }
